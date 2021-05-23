@@ -29,4 +29,13 @@ public class Airport {
     public String toString() {
         return name + " (" + iata + ")";
     }
+
+    // Airport part of trip validation: check if this object's IATA code
+    // is the same as the specified "other" airport.
+    // Do not forget to use logical comparison (equals() instead of ==)
+    // Do not forget to check that other is not null, otherwise other.iata
+    // will throw a NullPointerException
+    public boolean isSameAs(Airport other) {
+        return other != null && iata.equals(other.iata);
+    }
 }
