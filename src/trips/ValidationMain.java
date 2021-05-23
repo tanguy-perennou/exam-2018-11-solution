@@ -16,5 +16,15 @@ public class ValidationMain {
         System.out.println(tp.isConnectedTo(pr)); // true
         System.out.println(tp.isConnectedTo(null)); // false
         System.out.println(tp.isConnectedTo(tp)); // false
+
+        // Test isValid with an evolving trip
+        Trip trip = new Trip();
+        System.out.println(trip.isValid()); // false
+        trip.addFlight(tp);
+        System.out.println(trip.isValid()); // true
+        trip.addFlight(pr);
+        System.out.println(trip.isValid()); // true
+        trip.addFlight(pr);
+        System.out.println(trip.isValid()); // false
     }
 }

@@ -38,4 +38,23 @@ public class Trip {
         flights.add(tp);
     }
 
+    // Trip validation based on the number of flights, and on the chain 
+    // of connexions when there are more than two flights.
+    public boolean isValid() {
+        int nbFlights = flights.size();
+        if (nbFlights == 0) {
+            return false;
+        } else if (nbFlights == 1) {
+            return true;
+        } else {
+            // key point: i must be between 0 and nbFlights-2, not -1 as usual
+            for(int i = 0; i < nbFlights-1; i++) {
+                if(!flights.get(i).isConnectedTo(flights.get(i + 1))) {
+                    return false; // stops the loop and exits the function
+                }
+            }
+            return true; // all flights were connected: can return true
+        }
+    }
+
 }
