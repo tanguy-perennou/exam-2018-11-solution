@@ -10,5 +10,11 @@ public class TripMain {
         System.out.println(cdg);
         Airport rkv = new Airport("Reykjavik", "RKV");
         System.out.println(rkv);
+
+        // Create a few flights
+        Flight tp = new Flight("AA1111", tls, cdg);
+        System.out.println(tp);
+        Flight pr = new Flight("BB2222", cdg, rkv);
+        System.out.println(pr);
     }
 }
