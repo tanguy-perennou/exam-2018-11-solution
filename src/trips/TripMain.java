@@ -16,5 +16,15 @@ public class TripMain {
         System.out.println(tp);
         Flight pr = new Flight("BB2222", cdg, rkv);
         System.out.println(pr);
+
+        // Create a trip with these flights
+        // System.out.println will show the three possible displays
+        // of a trip : empty, direct or with several flights
+        Trip trip = new Trip();
+        System.out.println(trip);
+        trip.addFlight(tp);
+        System.out.println(trip);
+        trip.addFlight(pr);
+        System.out.println(trip); 
     }
 }
