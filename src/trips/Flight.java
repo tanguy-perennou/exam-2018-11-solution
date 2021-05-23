@@ -37,4 +37,9 @@ public class Flight {
         return String.format("%s : %s - %s", flightNumber, departureAirport.getIata(), arrivalAirport.getIata());
     }
 
+    // Flight part of trip validation: check if "next" flight takes off from 
+    // where "this" flight landed
+    public boolean isConnectedTo(Flight next) {
+        return next != null && arrivalAirport.isSameAs(next.departureAirport);
+    }
 }
