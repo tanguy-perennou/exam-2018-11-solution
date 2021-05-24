@@ -21,8 +21,7 @@ public class GPSCoordinatesReaderMain {
 			line = reader.readLine();
 		}
 		
-		//reader.close();
-		
+		reader.close();
 	}
 
 }
