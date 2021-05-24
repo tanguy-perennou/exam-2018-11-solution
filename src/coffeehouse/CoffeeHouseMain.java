@@ -11,5 +11,17 @@ public class CoffeeHouseMain {
         t1.prepareRecipe();
         Tea t2 = new Tea(false);
         t2.prepareRecipe();
+
+        // test all valid forms of takeOrder
+        Barista bob = new Barista();
+        bob.takeOrder("coffee").prepareRecipe();
+        bob.takeOrder("coffee, extras").prepareRecipe();
+        bob.takeOrder("tea").prepareRecipe();
+        bob.takeOrder("tea, extras").prepareRecipe();
+
+        // also test invalid forms of take order, they should all return null
+        System.out.println(bob.takeOrder("chocolate"));
+        System.out.println(bob.takeOrder(""));
+        System.out.println(bob.takeOrder(null));
     }
 }
