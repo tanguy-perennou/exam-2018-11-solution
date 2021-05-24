@@ -2,10 +2,11 @@ package exceptions;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class GPSCoordinatesReaderMain {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		FileReader fileReader = new FileReader("src/exceptions/summits.txt");
 		BufferedReader reader = new BufferedReader(null);
 		
