@@ -19,7 +19,7 @@ public class ServerForSingleClient {
 		Socket clientSocket = serverSocket.accept();
 		PrintWriter socketWriter = new PrintWriter(clientSocket.getOutputStream());
 		BufferedReader socketReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-		String request = "dummy";
+		String request = socketReader.readLine(); // get request from socket, not from a predefined text
 		String reply = request.toUpperCase() + " " + request.toUpperCase();
 		socketWriter.println(reply);
 		socketWriter.flush(); // mandatory, otherwise message is remains stuck in the client process
