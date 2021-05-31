@@ -15,7 +15,7 @@ import java.net.Socket;
  */
 public class ServerForSingleClient {
 	public static void main(String[] args) throws IOException {
-		ServerSocket serverSocket = new ServerSocket(2000);
+		ServerSocket serverSocket = new ServerSocket(6789); // use same port as in Client.java
 		Socket clientSocket = serverSocket.accept();
 		PrintWriter socketWriter = new PrintWriter(clientSocket.getOutputStream());
 		BufferedReader socketReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
