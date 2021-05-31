@@ -22,6 +22,7 @@ public class ServerForSingleClient {
 		String request = "dummy";
 		String reply = request.toUpperCase() + " " + request.toUpperCase();
 		socketWriter.println(reply);
+		socketWriter.flush(); // mandatory, otherwise message is remains stuck in the client process
 		request = socketReader.readLine();
 		clientSocket.close();
 		serverSocket.close();
