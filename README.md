@@ -39,3 +39,7 @@ Progressive solution for November 2018 TCS3-IN CPOOR Exam at ISAE-SUPAERO.
 
 - [Barista and takeOrder()](https://github.com/tanguy-perennou/exam-2018-11-solution/tree/v3.2-barista/src/coffeehouse)
 
+## Exercise 4: Networking
+
+- [Connecting and exchanging a single request/reply](https://github.com/tanguy-perennou/exam-2018-11-solution/blob/v4.1/src/net/ServerForSingleClient.java)
+- [Implementing the complete service loop](https://github.com/tanguy-perennou/exam-2018-11-solution/blob/v4.2/src/net/ServerForSingleClient.java)
