@@ -19,11 +19,18 @@ public class ServerForSingleClient {
 		Socket clientSocket = serverSocket.accept();
 		PrintWriter socketWriter = new PrintWriter(clientSocket.getOutputStream());
 		BufferedReader socketReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-		String request = socketReader.readLine(); // get request from socket, not from a predefined text
-		String reply = request.toUpperCase() + " " + request.toUpperCase();
-		socketWriter.println(reply);
-		socketWriter.flush(); // mandatory, otherwise message is remains stuck in the client process
-		request = socketReader.readLine();
+		String request = ""; // init request with a non-null value so that we can enter the service loop
+		while(request != null && !request.equals("exit")) {
+			// 1. read request; null means that client has gone
+			request = socketReader.readLine();
+
+			// 2. computer reply; unchanged
+			String reply = request.toUpperCase() + " " + request.toUpperCase();
+
+			// 3. send reply; remember that you have to flush it somehow
+			socketWriter.println(reply);
+			socketWriter.flush(); // mandatory, otherwise message is remains stuck in the client process
+		}
 		clientSocket.close();
 		serverSocket.close();
 	}
